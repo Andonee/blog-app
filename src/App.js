@@ -1,9 +1,9 @@
 import React from 'react'
-import './App.scss'
+import styles from './App.module.scss'
 import { Route, Switch, HashRouter as Router } from 'react-router-dom'
 
 import Navbar from './components/Navbar/Navbar'
-import Footer from './components/UI/Footer/Footer'
+import Footer from './components/Footer/Footer'
 import Home from './components/Pages/Home/Home'
 import Posts from './components/Pages/Posts/Posts'
 import Contact from './components/Pages/Contact/Contact'
@@ -13,7 +13,7 @@ import NotFound from './components/Pages/NotFound/NotFound'
 const App = () => {
 	return (
 		<Router>
-			<div className='app'>
+			<div className={styles.app}>
 				<Navbar />
 				<Switch>
 					<Route exact path='/' component={Home} />

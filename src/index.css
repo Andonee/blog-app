@@ -85,3 +85,23 @@ body {
 	font-size: 10px;
 	font-family: 'Lato', sans-serif;
 }
+
+.fa-times {
+	font-size: 1.5rem;
+	transform: rotate(360deg);
+	transition: all 0.3s ease-in-out;
+}
+.fa-bars {
+	font-size: 1.5rem;
+	transform: rotate(180deg);
+	transition: all 0.3s ease-in-out;
+}
+
+.fas {
+	cursor: pointer;
+}
+
+.fa-heart {
+	font-size: 1.2rem;
+	color: var(--secondary);
+}

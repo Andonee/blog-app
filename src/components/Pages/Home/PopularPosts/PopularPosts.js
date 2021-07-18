@@ -1,5 +1,5 @@
 import React from 'react'
-import './PopularPosts.scss'
+import styles from './PopularPosts.module.scss'
 import { Header, Card } from '../../../UI'
 import Stats from './Stats/Stats'
 
@@ -24,7 +24,7 @@ const PopularPosts = () => {
 					id='1'
 				/>
 			</div>
-			<div className='popularPosts_stats'>
+			<div className={styles.PopularPosts_stats}>
 				<Stats stats='550' text='Total Articles' />
 				<Stats stats='550' text='Total Articles' />
 				<Stats stats='550' text='Total Articles' />

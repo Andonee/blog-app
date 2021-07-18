@@ -1,14 +1,14 @@
 import React from 'react'
-import './Input.scss'
+import styles from './Input.module.scss'
 
 const Input = ({ type, value, placeholder, input }) => {
 	return (
 		<>
 			{input === 'textarea' ? (
-				<textarea className='input' rows={5} placeholder={placeholder} />
+				<textarea className={styles.input} rows={5} placeholder={placeholder} />
 			) : (
 				<input
-					className='input'
+					className={styles.input}
 					type={type}
 					value={value}
 					placeholder={placeholder}

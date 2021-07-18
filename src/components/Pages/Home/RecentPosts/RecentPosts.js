@@ -1,5 +1,5 @@
 import React from 'react'
-import './RecentPosts.scss'
+import styles from './RecentPosts.module.scss'
 import { Header, Card, Button } from '../../../UI'
 import AboutUs from '../AboutUs/AboutUs'
 

@@ -3,7 +3,6 @@
 	justify-content: space-between;
 	align-items: center;
 	position: relative;
-	background: rgba(0, 0, 0, 0.9);
 	color: var(--primary);
 	padding: 25px;
 	z-index: 2;
@@ -22,28 +21,10 @@
 		transition: all 0.3s;
 		font-size: 1.4rem;
 
-		&--open {
+		&___open {
 			transform: translateX(0);
 			transition: all 0.3s;
+			height: auto;
 		}
 	}
-
-	&_icon .fa-times {
-		font-size: 1.5rem;
-		transform: rotate(360deg);
-		transition: all 0.3s ease-in-out;
-	}
-
-	&_icon .fa-bars {
-		font-size: 1.5rem;
-		transform: rotate(180deg);
-		transition: all 0.3s ease-in-out;
-	}
-}
-
-.fas {
-	cursor: pointer;
-}
-
-@media screen and (max-width: 600px) {
 }

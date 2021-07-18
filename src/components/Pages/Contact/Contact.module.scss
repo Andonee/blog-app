@@ -1,9 +1,12 @@
-@import '../../../../styles/mixins.scss';
+@import '../../../../styles/mixins.module.scss';
 .contact {
 	display: flex;
+
+	&_imageContainer {
+		width: 100%;
+	}
 	&_image {
 		width: 100%;
-		text-align: center;
 		@include boxShadow;
 	}
 
