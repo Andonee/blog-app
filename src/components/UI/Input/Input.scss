@@ -1,0 +1,15 @@
+@import '../../../../styles/mixins.scss';
+
+.input {
+	padding: 5px 10px;
+	border: none;
+	font-size: 1.2rem;
+	color: var(--secondary);
+	transition: all 0.3s;
+	@include boxShadow;
+
+	&:focus {
+		outline: none;
+		box-shadow: 2px 5px 8px 0px rgb(70, 70, 70);
+	}
+}
