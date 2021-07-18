@@ -80,3 +80,7 @@ p,
 div {
 	color: var(--secondary);
 }
+
+body {
+	font-size: 10px;
+}
