@@ -1,21 +1,26 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import './Navigation.scss'
+import { NavLink } from 'react-router-dom'
 
-const Navigation = () => {
+const Navigation = ({ openNavbarHandler }) => {
 	return (
-		<nav>
-			<ul>
-				<li>
-					<Link to='/'>Home</Link>
-				</li>
-				<li>
-					<Link to='/articles'>Articles</Link>
-				</li>
-				<li>
-					<Link to='/contact'>Contact</Link>
-				</li>
-			</ul>
-		</nav>
+		<ul className='navigation'>
+			<li className='navigation_link' onClick={openNavbarHandler}>
+				<NavLink activeClassName='navigation--active' exact to='/'>
+					Home
+				</NavLink>
+			</li>
+			<li className='navigation_link' onClick={openNavbarHandler}>
+				<NavLink activeClassName='navigation--active' to='/articles'>
+					Articles
+				</NavLink>
+			</li>
+			<li className='navigation_link' onClick={openNavbarHandler}>
+				<NavLink activeClassName='navigation--active' to='/contact'>
+					Contact
+				</NavLink>
+			</li>
+		</ul>
 	)
 }
 

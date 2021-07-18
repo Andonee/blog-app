@@ -1,0 +1,16 @@
+.navigation {
+	&_link {
+		margin: 20px 0;
+		text-align: center;
+	}
+
+	&_link a {
+		text-decoration: none;
+		color: var(--primary);
+		letter-spacing: 5px;
+		padding-bottom: 5px;
+	}
+	&--active {
+		border-bottom: 2px solid var(--primary);
+	}
+}
