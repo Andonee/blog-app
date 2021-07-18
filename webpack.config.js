@@ -1,5 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const path = require('path')
+const devMode = process.env.NODE_ENV !== 'production'
 
 module.exports = {
 	entry: './src/index.js',
@@ -11,6 +13,7 @@ module.exports = {
 		new HtmlWebpackPlugin({
 			template: './src/index.html',
 		}),
+		new MiniCssExtractPlugin(),
 	],
 	resolve: {
 		modules: [__dirname, 'src', 'node_modules'],
@@ -23,13 +26,15 @@ module.exports = {
 				exclude: /node_modules/,
 				loader: require.resolve('babel-loader'),
 			},
+			// Checks for .scss and css files
 			{
-				test: /\.css$/,
-				use: ['style-loader', 'css-loader'],
-			},
-			{
-				test: /\.scss$/,
-				use: ['style-loader', 'css-loader', 'sass-loader'],
+				test: /\.(sc|c)ss$/,
+				use: [
+					devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
+					'css-loader',
+					'postcss-loader',
+					'sass-loader',
+				],
 			},
 			{
 				test: /\.png|svg|jpg|gif$/,
@@ -37,4 +42,5 @@ module.exports = {
 			},
 		],
 	},
+	devtool: 'source-map',
 }
