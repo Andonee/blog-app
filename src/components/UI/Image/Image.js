@@ -1,13 +1,7 @@
 import React from 'react'
 
-const Image = ({ src, render }) => {
-	return (
-		<div>
-			{render(
-				'https://ptmpolska.pl/media/djcatalog2/images/item/9/naczepa-typu-jumbo.3_f.jpg'
-			)}
-		</div>
-	)
+const Image = ({ src, alt, width = '100%', height }) => {
+	return <img src={src} alt={alt} style={{ width: width, height: height }} />
 }
 
 export default Image
