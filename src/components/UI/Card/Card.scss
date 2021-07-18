@@ -1,3 +1,5 @@
+@import '../../../../styles/mixins.scss';
+
 .card {
 	display: flex;
 	flex-direction: column;
@@ -5,9 +7,9 @@
 	width: 400px;
 	height: 350px;
 	position: relative;
-	box-shadow: 5px 5px 5px 0px rgba(153, 153, 153, 1);
-	border-radius: 5px;
+
 	transition: all 0.3s;
+	@include boxShadow;
 
 	&_img {
 		border-top-left-radius: 5px;
