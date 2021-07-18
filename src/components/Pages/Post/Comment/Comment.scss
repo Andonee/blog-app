@@ -1,0 +1,18 @@
+@import '../../../../../styles/mixins.scss';
+
+.comment {
+	width: 80%;
+	background: var(--primary);
+	@include boxShadow;
+	padding: 10px 20px;
+	font-size: 1.2rem;
+
+	&_content {
+		margin: 10px 0;
+	}
+
+	&_author {
+		font-weight: bold;
+		font-size: 0.9rem;
+	}
+}

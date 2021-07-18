@@ -7,6 +7,7 @@
 	color: var(--secondary);
 	transition: all 0.3s;
 	@include boxShadow;
+	resize: none;
 
 	&:focus {
 		outline: none;
