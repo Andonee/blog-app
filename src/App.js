@@ -3,6 +3,7 @@ import styles from './App.module.scss'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
 import Navbar from './components/Navbar/Navbar'
+import Footer from './components/UI/Footer/Footer'
 import Home from './components/Pages/Home/Home'
 import Posts from './components/Pages/Posts/Posts'
 import Contact from './components/Pages/Contact/Contact'
@@ -19,6 +20,7 @@ const App = () => {
 					{/* TODO
 					ADD 404 page */}
 				</Switch>
+				<Footer />
 			</div>
 		</BrowserRouter>
 	)
