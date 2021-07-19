@@ -1,11 +1,10 @@
 import React from 'react'
 import styles from './Contact.module.scss'
-import { Image } from '../../UI'
 import contact from '../../../assets/images/contact.jpg'
 
 const Contact = () => {
 	return (
-		<div className={styles.contact}>
+		<div className={`${styles.contact} grid`}>
 			<div className={styles.contact_imageContainer}>
 				<img src={contact} alt='Contact us' className={styles.contact_image} />
 			</div>
