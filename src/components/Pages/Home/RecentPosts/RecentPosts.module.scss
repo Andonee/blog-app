@@ -1,0 +1,17 @@
+.recentPosts {
+	&_header,
+	&_aboutUs,
+	&_button,
+	&_posts {
+		grid-column: 2/12;
+	}
+	&_posts > div {
+		margin-bottom: 20px;
+	}
+
+	&_button {
+		margin: 50px 0;
+		text-align: center;
+		grid-row: 3;
+	}
+}

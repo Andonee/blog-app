@@ -1,14 +1,15 @@
 import React from 'react'
+import styles from './Header.module.scss'
 
-const Header = ({ content, size = '2rem', color, align = 'center' }) => {
+const Header = ({ content, size = '1.6rem', color, align = 'center' }) => {
 	return (
 		<div
 			style={{
 				fontSize: size,
 				color: color,
 				textAlign: align,
-				letterSpacing: '5px',
-			}}>
+			}}
+			className={styles.header}>
 			{content}
 		</div>
 	)

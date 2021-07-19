@@ -15,7 +15,7 @@ const Card = ({ img, title, id }) => {
 			<p className={styles.card_title}>{title}</p>
 			<button id={id} className={styles.card_button}>
 				{/* <img src={fav} alt='favourite' /> */}
-				<i class='far fa-heart'></i>
+				<i className='far fa-heart'></i>
 			</button>
 		</div>
 	)

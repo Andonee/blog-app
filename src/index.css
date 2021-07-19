@@ -105,3 +105,9 @@ body {
 	font-size: 1.2rem;
 	color: var(--secondary);
 }
+
+.grid {
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	gap: 20px;
+}

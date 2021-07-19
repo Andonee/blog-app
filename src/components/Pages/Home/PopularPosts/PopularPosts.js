@@ -5,9 +5,9 @@ import Stats from './Stats/Stats'
 
 const PopularPosts = () => {
 	return (
-		<section>
-			<Header content='Popular Posts' size='72px' />
-			<div>
+		<section className={styles.popularPosts}>
+			<Header content='Popular Posts' />
+			<div className='grid'>
 				<Card
 					img='https://via.placeholder.com/400x250'
 					title='some title'
@@ -24,11 +24,11 @@ const PopularPosts = () => {
 					id='1'
 				/>
 			</div>
-			<div className={styles.PopularPosts_stats}>
+			<div className={`${styles.popularPosts_stats} grid`}>
 				<Stats stats='550' text='Total Articles' />
-				<Stats stats='550' text='Total Articles' />
-				<Stats stats='550' text='Total Articles' />
-				<Stats stats='550' text='Total Articles' />
+				<Stats stats='780' text='Total Posts' />
+				<Stats stats='940' text='Total Comments' />
+				<Stats stats='1 M' text='Possibilities' />
 			</div>
 		</section>
 	)

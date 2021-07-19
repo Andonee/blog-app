@@ -1,3 +1,4 @@
+@import '../../../../styles/variables.scss';
 .navigation {
 	&_link {
 		margin: 20px 0;
@@ -12,5 +13,20 @@
 	}
 	&___active {
 		border-bottom: 2px solid var(--primary);
+	}
+
+	@media (min-width: $media_lg) {
+		& {
+			display: flex;
+
+			&_link a {
+				margin: 0 20px;
+				color: var(--secondary);
+			}
+		}
+
+		&___active {
+			border-bottom: 2px solid var(--secondary);
+		}
 	}
 }

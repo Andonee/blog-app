@@ -1,11 +1,17 @@
 .stats {
+	grid-column: 2/12;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-around;
-	background: blue;
-	width: 25%;
-	height: 50%;
+	// background: blue;
+	// width: 25%;
+	// height: 50%;
+	border-bottom: 1px solid var(--secondary);
+
+	&:last-child {
+		border-bottom: none;
+	}
 
 	&_amount {
 		font-size: 4rem;

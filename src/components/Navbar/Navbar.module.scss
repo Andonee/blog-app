@@ -1,3 +1,4 @@
+@import '../../../styles/variables.scss';
 .navbar {
 	display: flex;
 	justify-content: space-between;
@@ -20,11 +21,36 @@
 		transform: translateX(100%);
 		transition: all 0.3s;
 		font-size: 1.4rem;
+		height: 200px;
 
 		&___open {
 			transform: translateX(0);
 			transition: all 0.3s;
-			height: auto;
+			height: 200px;
+		}
+	}
+
+	@media (min-width: $media_lg) {
+		& {
+			padding: 0;
+			padding-left: 25px;
+		}
+		&_navigation {
+			flex-direction: row;
+			top: 0;
+			height: 70px;
+			background: none;
+			transform: translateX(0);
+			width: auto;
+		}
+
+		&___open {
+			transform: none;
+			height: 200px;
+		}
+
+		&_icon {
+			display: none;
 		}
 	}
 }

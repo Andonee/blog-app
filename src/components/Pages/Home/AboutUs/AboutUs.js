@@ -7,16 +7,16 @@ import { Image } from '../../../UI'
 
 const AboutUs = () => {
 	return (
-		<div className={styles.AboutUs}>
-			<p className={styles.AboutUs_title}>About Us</p>
-			<div className={styles.AboutUs_img}>
+		<div className={`${styles.aboutUs} grid`}>
+			<p className={styles.aboutUs_title}>About Us</p>
+			<div className={styles.aboutUs_img}>
 				<Image
 					src='https://via.placeholder.com/400x250'
 					alt='Awesome Travel Blog Team'
 				/>
 			</div>
 
-			<p className={styles.AboutUs_description}>
+			<p className={styles.aboutUs_description}>
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec
 				nisl non augue suscipit porta. Proin ut odio vulputate, molestie nisi
 				nec, vulputate ante. Ut luctus lacus vitae turpis rhoncus, et feugiat
@@ -30,8 +30,8 @@ const AboutUs = () => {
 				sed eros ultricies tempor nec quis felis. Phasellus aliquam a dui sit
 				amet malesuada.
 			</p>
-			<p className={styles.AboutUs_title}>Follow Us</p>
-			<div className={styles.alt_social}>
+			<p className={styles.aboutUs_title}>Follow Us</p>
+			<div className={styles.aboutUs_social}>
 				<img src={facebookIcon} alt='fallow us on facebook' />
 				<img src={twitterIcon} alt='fallow us on twitter' />
 				<img src={instagramIcon} alt='fallow us on instagram' />

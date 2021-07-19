@@ -1,14 +1,12 @@
+@import '../../../../../styles/variables.scss';
 .aboutUs {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	height: 720px;
-	width: 400px;
-	background: gray;
+	margin-top: 50px;
+	// background: red;
+	// grid-column: 2/12;
 
 	&_title {
 		font-size: 2rem;
-		width: 100%;
+		grid-column: 1/13;
 		text-align: center;
 		border-top: 2px solid var(--secondary);
 		border-bottom: 2px solid var(--secondary);
@@ -17,19 +15,26 @@
 	}
 
 	&_img {
-		width: 100%;
+		grid-column: 2/12;
+		grid-row: 2;
 		margin: 20px 0;
+		text-align: center;
 	}
 
 	&_description {
+		grid-column: 2/12;
 		text-align: justify;
 		padding: 15px 10px;
+		font-size: $mobile_fontSize;
 	}
 
 	&_social {
-		display: flex;
-		justify-content: space-around;
-		width: 50%;
-		padding: 15px 0;
+		grid-column: 2/12;
+		text-align: center;
+		margin-bottom: 50px;
+
+		& > img {
+			margin: 0 20px;
+		}
 	}
 }
