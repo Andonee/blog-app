@@ -11,7 +11,7 @@ const Footer = () => {
 				&copy; Awesome Travel Blog. All rights reserved.
 			</p>
 			<button className={styles.footer_button}>
-				<i class='fas fa-arrow-alt-circle-up'></i>
+				<i className='fas fa-arrow-alt-circle-up'></i>
 			</button>
 		</footer>
 	)

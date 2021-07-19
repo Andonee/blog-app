@@ -1,6 +1,7 @@
 @import '../../../../styles/mixins.module.scss';
 @import '../../../../styles/variables.scss';
 .contact {
+	margin-bottom: $gap_25;
 	&_imageContainer {
 		// width: 100%;
 		grid-column: 2/12;

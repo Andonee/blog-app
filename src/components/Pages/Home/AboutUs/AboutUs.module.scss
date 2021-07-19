@@ -11,13 +11,13 @@
 		border-top: 2px solid var(--secondary);
 		border-bottom: 2px solid var(--secondary);
 		padding: 5px 0;
-		margin: 10px 0;
+		margin: $gap_25 0;
 	}
 
 	&_img {
 		grid-column: 2/12;
 		grid-row: 2;
-		margin: 20px 0;
+		margin: $gap_25 0;
 		text-align: center;
 	}
 
@@ -31,7 +31,7 @@
 	&_social {
 		grid-column: 2/12;
 		text-align: center;
-		margin-bottom: 50px;
+		margin-bottom: $gap_50;
 
 		& > img {
 			margin: 0 20px;

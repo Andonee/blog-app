@@ -1,3 +1,4 @@
+@import '../../../../styles//variables.scss';
 .post {
 	display: flex;
 	flex-direction: column;
@@ -5,21 +6,21 @@
 	padding: 20px;
 
 	&_title {
-		margin: 50px 0;
+		// margin: 25px 0;
 	}
 	&_image {
-		margin-bottom: 50px;
+		margin-bottom: $gap_50;
 	}
 
 	&_content {
-		background: red;
 		width: 100%;
-		font-size: 1.5rem;
-		margin: 50px;
+		font-size: $mobile_fontSize;
+		margin: $gap_25;
+		text-align: justify;
 	}
 	&_comments {
 		width: 100%;
-		margin: 50px 0 100px 0;
+		margin: $gap_50 0 100px 0;
 
 		& > p {
 			font-size: 1.2rem;
@@ -30,11 +31,8 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: space-around;
-		width: 30%;
-		margin-left: auto;
-		margin-right: auto;
 		text-align: center;
-		margin-top: 50px;
-		height: 250px;
+		margin-top: $gap_50;
+		height: 300px;
 	}
 }

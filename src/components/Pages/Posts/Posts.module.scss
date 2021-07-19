@@ -1,10 +1,11 @@
+@import '../../../../styles/variables.scss';
 .posts {
 	&_search {
 		text-align: center;
-		margin: 20px 0;
+		margin: $gap_25 0;
 	}
 
 	&_list {
-		margin: 50px 0;
+		margin: $gap_50 0;
 	}
 }
