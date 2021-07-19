@@ -7,7 +7,7 @@ import { Image } from '../../../UI'
 
 const AboutUs = () => {
 	return (
-		<div className={`${styles.aboutUs} grid`}>
+		<div className={`${styles.aboutUs}`}>
 			<p className={styles.aboutUs_title}>About Us</p>
 			<div className={styles.aboutUs_img}>
 				<Image

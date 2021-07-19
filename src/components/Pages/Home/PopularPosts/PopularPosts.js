@@ -7,7 +7,7 @@ const PopularPosts = () => {
 	return (
 		<section className={styles.popularPosts}>
 			<Header content='Popular Posts' />
-			<div className='grid'>
+			<div className={`${styles.popularPosts_list} grid`}>
 				<Card
 					img='https://via.placeholder.com/400x250'
 					title='some title'

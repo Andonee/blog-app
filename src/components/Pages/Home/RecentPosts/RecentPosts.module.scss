@@ -1,10 +1,14 @@
 @import '../../../../../styles/variables.scss';
 .recentPosts {
-	&_header,
+	margin-bottom: 150px;
 	&_aboutUs,
 	&_button,
 	&_posts {
-		grid-column: 2/12;
+		margin: 0 $gap_25;
+	}
+
+	&_header {
+		margin: 0 auto;
 	}
 	&_posts > div {
 		margin-bottom: 20px;
@@ -14,5 +18,39 @@
 		margin: $gap_50 0;
 		text-align: center;
 		grid-row: 3;
+	}
+
+	&_posts > div {
+		margin: 0 auto;
+	}
+
+	@media (min-width: $media_xl) {
+		& {
+			display: grid;
+			grid-template-columns: repeat(10, 1fr);
+			grid-gap: 1rem;
+		}
+
+		&_header {
+			grid-column: 5/7;
+			text-align: center;
+			width: auto;
+		}
+
+		&_posts {
+			grid-column: 1/8;
+		}
+		&_aboutUs {
+			grid-column: 8/11;
+			margin: 0 $gap_25;
+
+			& > div > p {
+				margin-top: 0;
+			}
+		}
+
+		&_button {
+			grid-column: 5/7;
+		}
 	}
 }

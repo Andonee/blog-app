@@ -5,12 +5,12 @@ import AboutUs from '../AboutUs/AboutUs'
 
 const RecentPosts = () => {
 	return (
-		<section className='grid'>
+		<section className={styles.recentPosts}>
 			<div className={styles.recentPosts_header}>
 				<Header content='Recent Posts' />
 			</div>
 
-			<div className={styles.recentPosts_posts}>
+			<div className={`${styles.recentPosts_posts} grid`}>
 				<Card
 					img='https://via.placeholder.com/400x250'
 					title='some title'

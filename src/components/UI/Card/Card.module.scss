@@ -1,14 +1,16 @@
 @import '../../../../styles/mixins.module.scss';
+@import '../../../../styles/variables.scss';
 
 .card {
 	grid-column: 2/12;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	// width: 400px;
 	width: 100%;
+	max-width: 400px;
 	height: 350px;
 	position: relative;
+	margin: 0 auto;
 
 	transition: all 0.3s;
 	@include boxShadow;
@@ -47,5 +49,11 @@
 	&:hover &_img {
 		border-bottom-right-radius: 5px;
 		border-bottom-left-radius: 5px;
+	}
+
+	@media (min-width: $media_md) {
+		& {
+			grid-column: auto;
+		}
 	}
 }
