@@ -1,6 +1,5 @@
 import React from 'react'
 import styles from './Card.module.scss'
-import fav from '../../../assets/icons/favourite.svg'
 import { useHistory } from 'react-router-dom'
 
 const Card = ({ img, title, id }) => {

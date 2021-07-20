@@ -5,7 +5,7 @@ import { Image } from '../../UI'
 const NotFound = () => {
 	return (
 		<div className={styles.notFound}>
-			<Image src={not_found} alt='page not found' height='80%' />
+			<Image src={not_found} alt='page not found' height='auto' />
 		</div>
 	)
 }

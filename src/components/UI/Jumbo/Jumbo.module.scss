@@ -1,4 +1,4 @@
-@import url('../../../../styles/variables.css');
+@import '../../../../styles/variables.scss';
 
 .jumbo {
 	position: relative;
@@ -15,7 +15,7 @@
 		left: 50%;
 		transform: translate(-50%, -50%);
 		font-size: 2rem;
-		color: var(--primary);
+		color: $primary;
 		width: 95%;
 		background: #1f1f1fb0;
 		width: 100%;

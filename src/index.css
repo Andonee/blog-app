@@ -78,7 +78,7 @@ th {
 
 p,
 div {
-	color: var(--secondary);
+	color: #3a3a3a;
 }
 
 body {
@@ -105,7 +105,7 @@ body {
 
 .fa-heart {
 	font-size: 1.2rem;
-	color: var(--secondary);
+	color: #3a3a3a;
 }
 
 .grid {

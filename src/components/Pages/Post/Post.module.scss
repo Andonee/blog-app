@@ -3,7 +3,7 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	padding: 0 20px 150px 20px;
+	padding: 0 20px $gap_section 20px;
 
 	&_image {
 		margin-bottom: $gap_50;

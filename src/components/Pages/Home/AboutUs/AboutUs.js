@@ -1,8 +1,5 @@
 import React from 'react'
 import styles from './AboutUs.module.scss'
-import facebookIcon from '../../../../assets/icons/facebook.svg'
-import instagramIcon from '../../../../assets/icons/instagram.svg'
-import twitterIcon from '../../../../assets/icons/twitter.svg'
 import { Image } from '../../../UI'
 
 const AboutUs = () => {
@@ -31,11 +28,22 @@ const AboutUs = () => {
 				amet malesuada.
 			</p>
 			<p className={styles.aboutUs_title}>Follow Us</p>
-			<div className={styles.aboutUs_social}>
+			{/* <div className={styles.aboutUs_social}>
 				<img src={facebookIcon} alt='fallow us on facebook' />
 				<img src={twitterIcon} alt='fallow us on twitter' />
 				<img src={instagramIcon} alt='fallow us on instagram' />
-			</div>
+			</div> */}
+			<ul className={styles.aboutUs_social}>
+				<li>
+					<i class='fab fa-facebook'></i>
+				</li>
+				<li>
+					<i class='fab fa-twitter'></i>
+				</li>
+				<li>
+					<i class='fab fa-instagram-square'></i>
+				</li>
+			</ul>
 		</div>
 	)
 }

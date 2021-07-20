@@ -1,8 +1,9 @@
+@import '../../../../styles/variables.scss';
 .button {
 	border: none;
 	padding: 12px 40px;
-	background: var(--secondary);
-	color: var(--primary);
+	background: $secondary;
+	color: $primary;
 	letter-spacing: 5px;
 	text-transform: uppercase;
 	cursor: pointer;
@@ -16,8 +17,8 @@
 		height: 24px;
 		top: -5px;
 		left: -5px;
-		border-top: 2px solid var(--secondary);
-		border-left: 2px solid var(--secondary);
+		border-top: 2px solid $secondary;
+		border-left: 2px solid $secondary;
 		transition: all 0.3s;
 	}
 
@@ -38,8 +39,8 @@
 		height: 24px;
 		bottom: -5px;
 		right: -5px;
-		border-bottom: 2px solid var(--secondary);
-		border-right: 2px solid var(--secondary);
+		border-bottom: 2px solid $secondary;
+		border-right: 2px solid $secondary;
 		transition: all 0.3s;
 	}
 }

@@ -1,7 +1,7 @@
 @import '../../../../../styles/mixins.module.scss';
-
+@import '../../../../../styles/variables.scss';
 .comment {
-	background: var(--primary);
+	background: $primary;
 	@include boxShadow;
 	padding: 10px 20px;
 	font-size: 1.2rem;
