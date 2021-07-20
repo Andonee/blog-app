@@ -1,11 +1,12 @@
-@import '../../../../../styles/mixins.scss';
-
+@import '../../../../../styles/mixins.module.scss';
+@import '../../../../../styles/variables.scss';
 .comment {
-	width: 80%;
-	background: var(--primary);
+	background: $primary;
 	@include boxShadow;
 	padding: 10px 20px;
 	font-size: 1.2rem;
+	max-width: 1500px;
+	margin: 0 auto;
 
 	&_content {
 		margin: 10px 0;

@@ -1,0 +1,17 @@
+@import '../../../../styles/variables.scss';
+.posts {
+	padding-bottom: $gap_section;
+	&_search {
+		text-align: center;
+		margin: $gap_25 0;
+
+		& > input {
+			width: 80%;
+			max-width: 400px;
+		}
+	}
+
+	&_list {
+		margin: $gap_50 0;
+	}
+}

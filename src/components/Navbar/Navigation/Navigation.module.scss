@@ -1,0 +1,80 @@
+@import '../../../../styles/variables.scss';
+.navigation {
+	&_link {
+		margin: 20px 0;
+		text-align: center;
+	}
+
+	&_link a {
+		color: var(--primary);
+		letter-spacing: 5px;
+		text-decoration: none;
+		position: relative;
+		display: block;
+		padding: 5px;
+		font-weight: bold;
+		transition: 0.5s;
+
+		&:before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			transform: translateY(2);
+			transition: 0.5s;
+			border-top: 2px solid $secondary;
+			border-bottom: 2px solid $secondary;
+			opacity: 0;
+		}
+		&:hover:before {
+			transform: scaleY(1.2);
+			opacity: 1;
+		}
+
+		&:after {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: $secondary;
+			transition: 0.5s;
+			transform: scale(0);
+			z-index: -1;
+		}
+
+		&:hover:after {
+			transform: scale(1);
+		}
+
+		&:hover {
+			color: $primary;
+		}
+	}
+	&___active {
+		border-bottom: 2px solid $primary;
+	}
+
+	@media (min-width: $media_lg) {
+		& {
+			display: flex;
+
+			&_link a {
+				margin: 0 20px;
+				color: $secondary;
+			}
+
+			&_link:hover a {
+				color: $primary;
+			}
+		}
+
+		&___active {
+			border-top: 2px solid $secondary;
+			border-bottom: 2px solid $secondary;
+		}
+	}
+}

@@ -1,0 +1,42 @@
+@import '../../../styles/variables.scss';
+.footer {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	background: $secondary;
+	padding: 0 20px;
+	text-align: center;
+
+	&_copyrights {
+		color: #686868;
+		font-size: 1rem;
+		margin: 10px 0;
+	}
+
+	&_button {
+		width: auto;
+		font-size: 2rem;
+		background: none;
+		border: none;
+		outline: none;
+		color: #686868;
+		order: -1;
+		margin: 10px 0;
+	}
+
+	@media (min-width: $media_md) {
+		& {
+			flex-direction: row;
+
+			&_copyrights {
+				margin-right: auto;
+			}
+
+			&_button {
+				order: 1;
+			}
+		}
+	}
+}

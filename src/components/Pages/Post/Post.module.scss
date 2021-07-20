@@ -1,0 +1,44 @@
+@import '../../../../styles//variables.scss';
+.post {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 0 20px $gap_section 20px;
+
+	&_image {
+		margin-bottom: $gap_50;
+	}
+
+	&_content {
+		width: 100%;
+		font-size: $mobile_fontSize;
+		margin: $gap_25;
+		text-align: justify;
+	}
+	&_comments {
+		width: 100%;
+		margin: $gap_50 0 $gap_25 0;
+
+		& > p {
+			font-size: 1.2rem;
+			font-weight: bold;
+		}
+	}
+
+	&_addComment {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		text-align: center;
+		margin-top: $gap_50;
+		height: 300px;
+	}
+
+	@media (min-width: $media_md) {
+		&_addComment {
+			width: 600px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+}

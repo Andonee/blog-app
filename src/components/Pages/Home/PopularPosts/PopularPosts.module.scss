@@ -1,0 +1,34 @@
+@import '../../../../../styles/variables.scss';
+.popularPosts {
+	margin: $gap_50;
+
+	&_stats {
+		margin-top: 100px;
+		border-top: 2px solid $secondary;
+		border-bottom: 2px solid $secondary;
+		width: 90%;
+		margin-left: auto;
+		margin-right: auto;
+		padding: 50px 0;
+	}
+
+	@media (min-width: $media_md) {
+		&_list {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+			grid-gap: 2rem;
+		}
+
+		&_list > div {
+			margin: 0 $gap_25;
+			margin: 0 auto;
+		}
+	}
+
+	@media (min-width: $media_xl) {
+		&_stats {
+			display: flex;
+			justify-content: space-between;
+		}
+	}
+}
