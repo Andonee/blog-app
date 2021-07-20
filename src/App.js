@@ -10,7 +10,16 @@ import Contact from './components/Pages/Contact/Contact'
 import Post from './components/Pages/Post/Post'
 import NotFound from './components/Pages/NotFound/NotFound'
 
+import useFetch from './hooks/useFetch'
+
 const App = () => {
+	const { isLoading, data, error } = useFetch(
+		'GET',
+		'https://jsonplaceholder.typicode.com/posts/1'
+	)
+
+	console.log(isLoading, data, error)
+
 	return (
 		<Router>
 			<div className={styles.app}>

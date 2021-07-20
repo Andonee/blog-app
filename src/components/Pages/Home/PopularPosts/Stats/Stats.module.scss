@@ -16,12 +16,6 @@
 		letter-spacing: 5px;
 	}
 
-	@media (min-width: 1040px) {
-		&:nth-child(3) {
-			border-bottom: none;
-		}
-	}
-
 	@media (min-width: $media_xl) {
 		& {
 			border-bottom: none;

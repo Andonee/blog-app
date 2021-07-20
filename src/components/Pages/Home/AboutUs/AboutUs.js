@@ -30,13 +30,13 @@ const AboutUs = () => {
 			<p className={styles.aboutUs_title}>Follow Us</p>
 			<ul className={styles.aboutUs_social}>
 				<li>
-					<i class='fab fa-facebook'></i>
+					<i className='fab fa-facebook'></i>
 				</li>
 				<li>
-					<i class='fab fa-twitter'></i>
+					<i className='fab fa-twitter'></i>
 				</li>
 				<li>
-					<i class='fab fa-instagram-square'></i>
+					<i className='fab fa-instagram-square'></i>
 				</li>
 			</ul>
 		</div>

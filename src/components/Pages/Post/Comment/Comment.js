@@ -1,16 +1,15 @@
 import React from 'react'
 import styles from './Comment.module.scss'
+import { ErrorBoundary } from '../../../UI'
 
-const Comment = () => {
+const Comment = ({ content, author }) => {
 	return (
-		<div className={styles.comment}>
-			<p className={styles.comment_content}>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
-				molestie consequat molestie. Curabitur nec consectetur nisi. Donec id
-				justo id dui pharetra facilisis.
-			</p>
-			<p className={styles.comment_author}>Author</p>
-		</div>
+		<ErrorBoundary>
+			<div className={styles.comment}>
+				<p className={styles.comment_content}>{content}</p>
+				<p className={styles.comment_author}>{author}</p>
+			</div>
+		</ErrorBoundary>
 	)
 }
 

@@ -9,6 +9,7 @@
 	transition: all 0.3s;
 	@include boxShadow;
 	resize: none;
+	margin: 20px 0;
 
 	&:focus {
 		outline: none;
