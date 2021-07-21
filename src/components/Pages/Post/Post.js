@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import styles from './Post.module.scss'
-import { Image, Header, Input, Button, ErrorBoundary } from '../../UI'
+import { Image, Header, Input, Button, ErrorBoundary, Spinner } from '../../UI'
 import Comment from './Comment/Comment'
 import { nanoid } from 'nanoid'
+import useFetch from '../../../hooks/useFetch'
 
 const Post = props => {
 	const [postComments, setPostComments] = useState({ postId: '', comments: [] })
-	const [commentsFetchError, setCommentsFetchError] = useState(false)
 	const [newComment, setNewComment] = useState({
 		comment: {
 			name: '',
@@ -18,35 +18,18 @@ const Post = props => {
 		error: false,
 	})
 
+	let { isLoading, data, error } = useFetch(
+		'GET',
+		`https://jsonplaceholder.typicode.com/comments?postId=${props.match.params.id}`
+	)
+
 	useEffect(() => {
-		console.log(props.match.params.id)
 		const postId = props.match.params.id
 		setPostComments(prevState => ({
-			...prevState,
+			comments: data,
 			postId: postId,
 		}))
-
-		const getComments = async () => {
-			try {
-				const response = await fetch(
-					`https://jsonplaceholder.typicode.com/comments?postId=${postId}`
-				)
-
-				if (!response.ok) throw new Error()
-
-				const data = await response.json()
-				console.log(data)
-				setPostComments(prevState => ({
-					...prevState,
-					comments: data,
-				}))
-			} catch {
-				setCommentsFetchError(true)
-			}
-		}
-
-		getComments()
-	}, [])
+	}, [data])
 
 	const onInputChange = e => {
 		setNewComment(prevState => ({
@@ -81,8 +64,6 @@ const Post = props => {
 
 			if (!response.ok) throw new Error()
 
-			const data = await response?.json()
-
 			// if response is OK manually adding data to state
 
 			const commentsList = postComments.comments.concat(createdComment)
@@ -90,7 +71,8 @@ const Post = props => {
 				...prevState,
 				comments: commentsList,
 			}))
-			setNewComment(prevState => ({
+
+			setNewComment({
 				error: false,
 				comment: {
 					name: '',
@@ -99,7 +81,7 @@ const Post = props => {
 					id: '',
 					postId: '',
 				},
-			}))
+			})
 		} catch {
 			setNewComment(prevState => ({
 				...prevState,
@@ -127,14 +109,15 @@ const Post = props => {
 			</ErrorBoundary>
 			<div className={styles.post_comments}>
 				<p>Comments</p>
+				{error && (
+					<p className={styles.post_fetchError}>Could not fetch comments :(</p>
+				)}
 				<ErrorBoundary>
-					{commentsFetchError ? (
-						<p className={styles.post_fetchError}>
-							Could not fetch comments :(
-						</p>
+					{isLoading ? (
+						<Spinner />
 					) : (
 						<>
-							{postComments.comments.map(comment => {
+							{postComments.comments?.map(comment => {
 								return (
 									<Comment
 										key={comment.id}

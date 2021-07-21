@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 
-const useFetch = ({ method = 'GET', url, body = {} }) => {
+const useFetch = (method, url, body) => {
 	const [isLoading, setIsLoading] = useState(false)
 	const [data, setData] = useState(null)
 	const [error, setError] = useState(false)
