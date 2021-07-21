@@ -17,7 +17,7 @@ const Card = ({ post, img, addToFav, favourites }) => {
 	const addToFavourite = e => {
 		e.stopPropagation()
 
-		addToFav({ id: post.id, post: { post } })
+		addToFav(post)
 	}
 
 	const removeFromFavourites = e => {
@@ -25,8 +25,6 @@ const Card = ({ post, img, addToFav, favourites }) => {
 
 		removeFromFavourites(post)
 	}
-
-	console.log(favourites)
 
 	let cardIcon = 'far'
 

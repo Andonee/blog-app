@@ -4,6 +4,7 @@
 	position: relative;
 	width: 100%;
 	text-align: center;
+	margin: $gap_50 0;
 
 	&_image {
 		width: 100%;
@@ -16,11 +17,11 @@
 		transform: translate(-50%, -50%);
 		font-size: 2rem;
 		color: $primary;
-		width: 95%;
 		background: #1f1f1fb0;
 		width: 100%;
 		padding: 10px 20px;
 		height: 150px;
+		max-height: 80%;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
