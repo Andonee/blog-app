@@ -10,8 +10,6 @@ import Contact from './components/Pages/Contact/Contact'
 import Post from './components/Pages/Post/Post'
 import NotFound from './components/Pages/NotFound/NotFound'
 
-import useFetch from './hooks/useFetch'
-
 const App = () => {
 	return (
 		<Router>

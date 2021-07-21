@@ -55,7 +55,9 @@ const RecentPosts = () => {
 			</div>
 
 			<div className={styles.recentPosts_button}>
-				<Button text='All Posts' font='1.5rem' onClick={goToAllArticles} />
+				<Button font='1.5rem' onClick={goToAllArticles}>
+					All Posts
+				</Button>
 			</div>
 		</section>
 	)

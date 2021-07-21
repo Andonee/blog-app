@@ -159,7 +159,7 @@ const Post = props => {
 							placeholder='email'
 							value={newComment.comment.email}
 						/>
-						<Button text='Add comment' />
+						<Button>Add comment</Button>
 					</form>
 				</ErrorBoundary>
 			</div>
