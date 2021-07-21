@@ -75,4 +75,5 @@ module.exports = {
 			},
 		],
 	},
+	devtool: !devMode ? 'source-map' : 'inline-source-map',
 }

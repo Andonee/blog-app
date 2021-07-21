@@ -1,0 +1,9 @@
+@import '../../../../styles/variables.scss';
+.errorBoundary {
+	display: flex;
+	justify-content: center;
+	color: $secondary;
+	font-weight: bold;
+	font-size: 2rem;
+	padding: 50px 0;
+}

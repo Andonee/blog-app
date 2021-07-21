@@ -4,6 +4,7 @@
 	flex-direction: column;
 	align-items: center;
 	padding: 0 20px $gap_section 20px;
+	min-height: calc(100vh - 270px);
 
 	&_image {
 		margin-bottom: $gap_50;
@@ -25,16 +26,35 @@
 		}
 	}
 
+	&_fetchError {
+		color: $error;
+		margin: $gap_50 auto;
+		width: fit-content;
+	}
+
 	&_addComment {
 		display: flex;
 		flex-direction: column;
 		justify-content: space-around;
 		text-align: center;
 		margin-top: $gap_50;
-		height: 300px;
+
+		& > button {
+			margin-top: 40px;
+		}
+
+		&_error {
+			color: $error;
+			font-size: 2rem;
+			width: fit-content;
+			margin: 50px auto;
+		}
 	}
 
 	@media (min-width: $media_md) {
+		& {
+			min-height: calc(100vh - 190px);
+		}
 		&_addComment {
 			width: 600px;
 			margin-left: auto;

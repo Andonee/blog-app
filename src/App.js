@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styles from './App.module.scss'
 import { Route, Switch, HashRouter as Router } from 'react-router-dom'
 
@@ -9,10 +9,17 @@ import Posts from './components/Pages/Posts/Posts'
 import Contact from './components/Pages/Contact/Contact'
 import Post from './components/Pages/Post/Post'
 import NotFound from './components/Pages/NotFound/NotFound'
+import ScrollToTop from './components/utils/ScrollToTop'
+import { connect } from 'react-redux'
+import { fetchPosts } from './store/posts/postsActions'
 
-const App = () => {
+const App = ({ fetchPosts }) => {
+	useEffect(() => {
+		fetchPosts()
+	}, [])
 	return (
 		<Router>
+			<ScrollToTop />
 			<div className={styles.app}>
 				<Navbar />
 				<Switch>
@@ -28,4 +35,16 @@ const App = () => {
 	)
 }
 
-export default App
+const mapStateToProps = state => {
+	return {
+		posts: state.posts,
+	}
+}
+
+const mapDispatchToProps = dispatch => {
+	return {
+		fetchPosts: () => dispatch(fetchPosts()),
+	}
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App)

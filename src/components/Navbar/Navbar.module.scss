@@ -21,12 +21,12 @@
 		transform: translateX(100%);
 		transition: all 0.3s;
 		font-size: 1.4rem;
-		height: 200px;
+		height: 250px;
 
 		&___open {
 			transform: translateX(0);
 			transition: all 0.3s;
-			height: 200px;
+			height: 250px;
 		}
 	}
 
