@@ -1,10 +1,18 @@
 import React from 'react'
 import styles from './RecentPosts.module.scss'
-import { Header, Card, Button, ErrorBoundary } from '../../../UI'
+import {
+	Header,
+	Card,
+	Button,
+	ErrorBoundary,
+	FetchDataError,
+	Spinner,
+} from '../../../UI'
 import AboutUs from '../AboutUs/AboutUs'
 import { useHistory } from 'react-router-dom'
+import { connect } from 'react-redux'
 
-const RecentPosts = () => {
+const RecentPosts = ({ posts }) => {
 	const history = useHistory()
 
 	const goToAllArticles = () => {
@@ -17,38 +25,24 @@ const RecentPosts = () => {
 				<Header content='Recent Posts' />
 			</div>
 			<ErrorBoundary>
-				<div className={`${styles.recentPosts_posts} grid`}>
-					<Card
-						img='https://via.placeholder.com/400x250'
-						title='some title'
-						id='1'
-					/>
-					<Card
-						img='https://via.placeholder.com/400x250'
-						title='some title'
-						id='1'
-					/>
-					<Card
-						img='https://via.placeholder.com/400x250'
-						title='some title'
-						id='1'
-					/>
-					<Card
-						img='https://via.placeholder.com/400x250'
-						title='some title'
-						id='1'
-					/>
-					<Card
-						img='https://via.placeholder.com/400x250'
-						title='some title'
-						id='1'
-					/>
-					<Card
-						img='https://via.placeholder.com/400x250'
-						title='some title'
-						id='1'
-					/>
-				</div>
+				{posts.error && <FetchDataError />}
+				{posts.isLoading ? (
+					<Spinner />
+				) : (
+					<div className={`${styles.recentPosts_posts} grid`}>
+						{/* Mocking list of 6 recent posts */}
+						{posts.data.slice(0, 6).map(post => {
+							return (
+								<Card
+									img='https://via.placeholder.com/400x250'
+									title={post.title}
+									id={post.id}
+									key={post.id}
+								/>
+							)
+						})}
+					</div>
+				)}
 			</ErrorBoundary>
 			<div className={styles.recentPosts_aboutUs}>
 				<AboutUs />
@@ -63,4 +57,10 @@ const RecentPosts = () => {
 	)
 }
 
-export default RecentPosts
+const mapStateToProps = state => {
+	return {
+		posts: state.posts,
+	}
+}
+
+export default connect(mapStateToProps)(RecentPosts)

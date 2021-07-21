@@ -4,8 +4,9 @@ import { Image, Header, Input, Button, ErrorBoundary, Spinner } from '../../UI'
 import Comment from './Comment/Comment'
 import { nanoid } from 'nanoid'
 import useFetch from '../../../hooks/useFetch'
+import { connect } from 'react-redux'
 
-const Post = props => {
+const Post = ({ match, post }) => {
 	const [postComments, setPostComments] = useState({ postId: '', comments: [] })
 	const [newComment, setNewComment] = useState({
 		comment: {
@@ -17,18 +18,24 @@ const Post = props => {
 		},
 		error: false,
 	})
+	const [postDetails, setPostDetails] = useState({})
+
+	const { title, body } = postDetails
 
 	let { isLoading, data, error } = useFetch(
 		'GET',
-		`https://jsonplaceholder.typicode.com/comments?postId=${props.match.params.id}`
+		`https://jsonplaceholder.typicode.com/comments?postId=${match.params.id}`
 	)
 
 	useEffect(() => {
-		const postId = props.match.params.id
-		setPostComments(prevState => ({
+		const postId = match.params.id
+
+		setPostDetails(post)
+
+		setPostComments({
 			comments: data,
 			postId: postId,
-		}))
+		})
 	}, [data])
 
 	const onInputChange = e => {
@@ -94,18 +101,14 @@ const Post = props => {
 		<div className={styles.post}>
 			<ErrorBoundary>
 				<div className={styles.post_title}>
-					<Header content={'Title'} size='3rem' />
+					<Header content={title} size='3rem' />
 				</div>
 			</ErrorBoundary>
 			<div className={styles.post_image}>
-				<Image src={'https://via.placeholder.com/600/d32776'} alt='title' />
+				<Image src={'https://via.placeholder.com/600/d32776'} alt={title} />
 			</div>
 			<ErrorBoundary>
-				<p className={styles.post_content}>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
-					molestie consequat molestie. Curabitur nec consectetur nisi. Donec id
-					justo id dui pharetra facilisis.
-				</p>
+				<p className={styles.post_content}>{body}</p>
 			</ErrorBoundary>
 			<div className={styles.post_comments}>
 				<p>Comments</p>
@@ -167,4 +170,11 @@ const Post = props => {
 	)
 }
 
-export default Post
+const mapStateToProps = (state, ownProps) => {
+	let postId = parseInt(ownProps.match.params.id)
+	return {
+		post: state.posts.data.find(post => post.id === postId),
+	}
+}
+
+export default connect(mapStateToProps)(Post)

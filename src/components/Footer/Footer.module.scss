@@ -8,6 +8,7 @@
 	background: $secondary;
 	padding: 0 20px;
 	text-align: center;
+	height: 150px;
 
 	&_copyrights {
 		color: #686868;
@@ -29,6 +30,7 @@
 	@media (min-width: $media_md) {
 		& {
 			flex-direction: row;
+			height: 70px;
 
 			&_copyrights {
 				margin-right: auto;

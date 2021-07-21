@@ -1,9 +1,15 @@
 @import '../../../../styles/variables.scss';
 .posts {
 	padding-bottom: $gap_section;
+	min-height: calc(100vh - 270px);
 	&_search {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-between;
 		text-align: center;
 		margin: $gap_25 0;
+		margin: $gap_50 auto;
 
 		& > input {
 			width: 80%;
@@ -13,5 +19,11 @@
 
 	&_list {
 		margin: $gap_50 0;
+	}
+
+	@media (min-width: $media_md) {
+		& {
+			min-height: calc(100vh - 190px);
+		}
 	}
 }
