@@ -2,7 +2,6 @@ import React from 'react'
 import styles from './RecentPosts.module.scss'
 import {
 	Header,
-	Card,
 	Button,
 	ErrorBoundary,
 	FetchDataError,
@@ -11,6 +10,7 @@ import {
 import AboutUs from '../AboutUs/AboutUs'
 import { useHistory } from 'react-router-dom'
 import { connect } from 'react-redux'
+import CardList from '../../../utils/CardList'
 
 const RecentPosts = ({ posts }) => {
 	const history = useHistory()
@@ -31,16 +31,7 @@ const RecentPosts = ({ posts }) => {
 				) : (
 					<div className={`${styles.recentPosts_posts} grid`}>
 						{/* Mocking list of 6 recent posts */}
-						{posts.data.slice(0, 6).map(post => {
-							return (
-								<Card
-									img='https://via.placeholder.com/400x250'
-									title={post.title}
-									id={post.id}
-									key={post.id}
-								/>
-							)
-						})}
+						<CardList cards={posts.data.slice(0, 6)} />
 					</div>
 				)}
 			</ErrorBoundary>

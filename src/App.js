@@ -12,6 +12,7 @@ import NotFound from './components/Pages/NotFound/NotFound'
 import ScrollToTop from './components/utils/ScrollToTop'
 import { connect } from 'react-redux'
 import { fetchPosts } from './store/posts/postsActions'
+import Favourites from './components/Pages/Favourites/Favourites'
 
 const App = ({ fetchPosts }) => {
 	useEffect(() => {
@@ -25,6 +26,7 @@ const App = ({ fetchPosts }) => {
 				<Switch>
 					<Route exact path='/' component={Home} />
 					<Route exact path='/articles' component={Posts} />
+					<Route exact path='/favourites' component={Favourites} />
 					<Route exact path='/contact' component={Contact} />
 					<Route path={`/articles/:id`} component={Post} />
 					<Route component={NotFound} />

@@ -22,9 +22,18 @@
 		background: none;
 		border: none;
 		outline: none;
-		color: #686868;
 		order: -1;
 		margin: 10px 0;
+
+		& > i {
+			color: #686868;
+			transition: all 0.3s;
+
+			&:hover {
+				cursor: pointer;
+				color: darken($secondary, 10%);
+			}
+		}
 	}
 
 	@media (min-width: $media_md) {

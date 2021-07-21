@@ -99,13 +99,14 @@ body {
 	transition: all 0.3s ease-in-out;
 }
 
-.fas {
-	cursor: pointer;
-}
-
 .fa-heart {
 	font-size: 1.2rem;
 	color: #3a3a3a;
+}
+
+.fas {
+	color: #d83636;
+	animation: addToFav 0.7s ease-in;
 }
 
 .grid {
@@ -136,5 +137,19 @@ body {
 @media (min-width: 2000px) {
 	body {
 		margin: 0 auto;
+	}
+}
+
+@keyframes addToFav {
+	0% {
+		transform: scale(1);
+	}
+
+	70% {
+		transform: scale(2);
+	}
+
+	100% {
+		transform: scale(1);
 	}
 }

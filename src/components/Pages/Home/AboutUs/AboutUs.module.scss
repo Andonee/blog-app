@@ -1,5 +1,6 @@
 @import '../../../../../styles/variables.scss';
 .aboutUs {
+	margin-top: $gap_50;
 	&_title {
 		font-size: 2rem;
 		text-align: center;
@@ -68,6 +69,14 @@
 			&:hover {
 				cursor: pointer;
 			}
+		}
+	}
+
+	@media (min-width: $media_xl) {
+		& {
+			margin-top: 0;
+			width: 350px;
+			margin-left: auto;
 		}
 	}
 }

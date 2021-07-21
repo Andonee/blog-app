@@ -10,7 +10,7 @@ const Navbar = () => {
 		setIsOpen(!isOpen)
 	}
 	return (
-		<nav className={styles.navbar}>
+		<nav className={styles.navbar} id='nav'>
 			<Logo />
 			<div className={styles.navbar_icon} onClick={openNavbarHandler}>
 				<i className={isOpen ? `fas fa-times` : `fas fa-bars`}></i>

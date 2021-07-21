@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import styles from './Posts.module.scss'
-import { Card, FetchDataError, Input, Spinner, Button } from '../../UI'
+import { FetchDataError, Input, Spinner, Button } from '../../UI'
 import { connect } from 'react-redux'
+import CardList from '../../utils/CardList'
 
 const Posts = ({ posts }) => {
 	const [filterPhrase, setFilterPhrase] = useState('')
@@ -30,18 +31,11 @@ const Posts = ({ posts }) => {
 				<Spinner />
 			) : (
 				<div className={`${styles.posts_list} grid`}>
-					{posts.data
-						.filter(post => post.title.toLowerCase().includes(filterPhrase))
-						.map(post => {
-							return (
-								<Card
-									img='https://via.placeholder.com/400x250'
-									title={post.title}
-									id={post.id}
-									key={post.id}
-								/>
-							)
-						})}
+					<CardList
+						cards={posts.data.filter(post =>
+							post.title.toLowerCase().includes(filterPhrase)
+						)}
+					/>
 				</div>
 			)}
 		</div>
