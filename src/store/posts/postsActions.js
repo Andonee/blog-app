@@ -2,6 +2,7 @@ import {
 	FETCH_POSTS_REQUEST,
 	FETCH_POSTS_SUCCESS,
 	FETCH_POSTS_ERROR,
+	ADD_TO_FAVOURITES,
 } from './postsTypes'
 
 export const fetchPostsRequest = () => {

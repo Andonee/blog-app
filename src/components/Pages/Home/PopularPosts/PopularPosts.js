@@ -1,14 +1,9 @@
 import React from 'react'
 import styles from './PopularPosts.module.scss'
-import {
-	Header,
-	Card,
-	ErrorBoundary,
-	FetchDataError,
-	Spinner,
-} from '../../../UI'
+import { Header, ErrorBoundary, FetchDataError, Spinner } from '../../../UI'
 import Stats from './Stats/Stats'
 import { connect } from 'react-redux'
+import CardList from '../../../utils/CardList'
 
 const PopularPosts = ({ posts }) => {
 	return (
@@ -21,16 +16,7 @@ const PopularPosts = ({ posts }) => {
 				) : (
 					<div className={`${styles.popularPosts_list} grid`}>
 						{/* Mocking list of 3 popular posts */}
-						{posts.data.slice(0, 3).map(post => {
-							return (
-								<Card
-									img='https://via.placeholder.com/400x250'
-									title={post.title}
-									id={post.id}
-									key={post.id}
-								/>
-							)
-						})}
+						<CardList cards={posts.data.slice(0, 3)} />
 					</div>
 				)}
 			</ErrorBoundary>

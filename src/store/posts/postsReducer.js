@@ -8,6 +8,7 @@ const initState = {
 	isLoading: true,
 	data: [],
 	error: '',
+	favourites: [],
 }
 
 const postsReducer = (state = initState, action) => {
