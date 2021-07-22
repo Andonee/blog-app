@@ -28,7 +28,7 @@ const Card = ({ post, img, addToFav, favourites }) => {
 
 	let cardIcon = 'far'
 
-	if (favourites.find(favPost => favPost.id === post.id)) {
+	if (favourites?.find(favPost => favPost.id === post.id)) {
 		cardIcon = 'fas'
 	}
 

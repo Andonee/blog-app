@@ -8,7 +8,7 @@ const checkout =
 
 const initState = checkout
 
-const favouritesReducer = (state = initState, action) => {
+const favouritesReducer = (state = initState || [], action) => {
 	switch (action.type) {
 		case TOGGLE_FAVOURITES:
 			const selectedPost = action.payload

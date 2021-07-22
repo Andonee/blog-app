@@ -16,7 +16,7 @@ const Navigation = ({ openNavbarHandler, favourites }) => {
 					Articles
 				</NavLink>
 			</li>
-			{favourites.length > 0 && (
+			{favourites?.length > 0 && (
 				<li className={styles.navigation_link} onClick={openNavbarHandler}>
 					<NavLink
 						activeClassName={styles.navigation___active}

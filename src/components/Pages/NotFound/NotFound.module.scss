@@ -1,5 +1,13 @@
+@import '../../../../styles/variables.scss';
 .notFound {
 	width: 100%;
 	max-width: 1000px;
 	margin: auto;
+	min-height: calc(100vh - 220px);
+
+	@media (min-width: $media_md) {
+		& {
+			min-height: calc(100vh - 140px);
+		}
+	}
 }
