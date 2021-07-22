@@ -1,6 +1,5 @@
 import { TOGGLE_FAVOURITES } from './favourtiesTypes'
 import { toggleFavourites } from './favouritesActions'
-import { expect } from '@jest/globals'
 
 describe('toggle favourites', () => {
 	test('returns an action with type "TOGGLE_FAVOURITES"', () => {
