@@ -14,6 +14,7 @@ const Input = ({
 		<>
 			{input === 'textarea' ? (
 				<textarea
+					data-test='component-input-textarea'
 					onChange={onChange}
 					className={styles.input}
 					rows={5}
@@ -24,6 +25,7 @@ const Input = ({
 				/>
 			) : (
 				<input
+					data-test='component-input-input'
 					onChange={onChange}
 					className={styles.input}
 					type={type}
