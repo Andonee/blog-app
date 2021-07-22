@@ -10,6 +10,9 @@ const setup = () => shallow(<FetchDataError />)
 
 test('renders without error', () => {
 	const wrapper = setup()
-	const buttonComponent = findByTestAttr(wrapper, 'component-fetchDataError')
-	expect(buttonComponent).toHaveLength(1)
+	const fetchDataComponentComponent = findByTestAttr(
+		wrapper,
+		'component-fetchDataError'
+	)
+	expect(fetchDataComponentComponent).toHaveLength(1)
 })
