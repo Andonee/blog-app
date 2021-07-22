@@ -2,7 +2,7 @@
 .favourites {
 	padding-bottom: $gap_section;
 	min-height: calc(100vh - 270px);
-	margin: $gap_50;
+	margin: 0 $gap_25;
 
 	@media (min-width: $media_md) {
 		& {
