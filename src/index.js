@@ -14,4 +14,4 @@ ReactDOM.render(
 	document.querySelector('#root')
 )
 
-module.hot.accept()
+// module.hot.accept()

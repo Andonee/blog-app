@@ -1,6 +1,8 @@
 @import '../../../../../styles/variables.scss';
 .popularPosts {
-	margin: $gap_50;
+	&_list {
+		margin: 0 25px;
+	}
 
 	&_stats {
 		margin-top: 100px;
@@ -15,6 +17,9 @@
 	}
 
 	@media (min-width: $media_md) {
+		& {
+			margin: $gap_50;
+		}
 		&_list {
 			display: grid;
 			grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
