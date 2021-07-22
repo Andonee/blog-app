@@ -57,6 +57,9 @@ module.exports = {
 				test: /\.jsx?$/,
 				exclude: /node_modules/,
 				loader: require.resolve('babel-loader'),
+				options: {
+					plugins: [['react-remove-properties', { properties: ['data-test'] }]],
+				},
 			},
 			// Checks for .scss and css files
 

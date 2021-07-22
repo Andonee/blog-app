@@ -1,6 +1,12 @@
 import { TOGGLE_FAVOURITES } from './favourtiesTypes'
 
-const initState = JSON.parse(localStorage.getItem('favourites')) || []
+// This checkout is needed for testing purpose
+const checkout =
+	typeof window !== 'undefined'
+		? JSON.parse(localStorage.getItem('favourites'))
+		: []
+
+const initState = checkout
 
 const favouritesReducer = (state = initState, action) => {
 	switch (action.type) {
@@ -11,11 +17,13 @@ const favouritesReducer = (state = initState, action) => {
 
 			if (isFavourite) {
 				const FavouritePosts = state.filter(post => post.id !== selectedPost.id)
-				localStorage.setItem('favourites', JSON.stringify(FavouritePosts))
+				typeof window !== 'undefined' &&
+					localStorage.setItem('favourites', JSON.stringify(FavouritePosts))
 				return FavouritePosts
 			} else {
 				const newState = [...state, selectedPost]
-				localStorage.setItem('favourites', JSON.stringify(newState))
+				typeof window !== 'undefined' &&
+					localStorage.setItem('favourites', JSON.stringify(newState))
 				return newState
 			}
 

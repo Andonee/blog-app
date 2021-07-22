@@ -9,12 +9,15 @@ const Footer = () => {
 		})
 	}
 	return (
-		<footer className={styles.footer}>
+		<footer className={styles.footer} data-test='component-footer'>
 			<Logo />
-			<p className={styles.footer_copyrights}>
+			<p className={styles.footer_copyrights} data-test='footer-copyrights'>
 				&copy; Awesome Travel Blog. All rights reserved.
 			</p>
-			<button className={styles.footer_button} onClick={scrollToTopHandler}>
+			<button
+				className={styles.footer_button}
+				onClick={scrollToTopHandler}
+				data-test='footer-button'>
 				<i className='fas fa-arrow-alt-circle-up'></i>
 			</button>
 		</footer>

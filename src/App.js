@@ -21,7 +21,7 @@ const App = ({ fetchPosts }) => {
 	return (
 		<Router>
 			<ScrollToTop />
-			<div className={styles.app}>
+			<div className={styles.app} data-test='component-app'>
 				<Navbar />
 				<Switch>
 					<Route exact path='/' component={Home} />
