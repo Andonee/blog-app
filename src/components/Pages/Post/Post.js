@@ -101,7 +101,11 @@ const Post = ({ match, post }) => {
 		<div className={styles.post}>
 			<ErrorBoundary>
 				<div className={styles.post_title}>
-					<Header content={title} size='3rem' />
+					<Header
+						content={title}
+						size='2rem'
+						borderBottom='1px solid #3a3a3a'
+					/>
 				</div>
 			</ErrorBoundary>
 			<div className={styles.post_image}>

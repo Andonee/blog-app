@@ -6,6 +6,10 @@
 	padding: 0 20px $gap_section 20px;
 	min-height: calc(100vh - 270px);
 
+	&_title {
+		max-width: 90%;
+	}
+
 	&_image {
 		margin-bottom: $gap_50;
 	}
@@ -54,6 +58,7 @@
 	@media (min-width: $media_md) {
 		& {
 			min-height: calc(100vh - 190px);
+			margin: $gap_50;
 		}
 		&_addComment {
 			width: 600px;
